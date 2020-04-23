@@ -23,7 +23,7 @@
 #include "serial.h"
 #include "../inc/MarlinConfig.h"
 
-uint8_t marlin_debug_flags = MARLIN_DEBUG_NONE;
+uint8_t marlin_debug_flags = MARLIN_DEBUG_LEVELING; // MARLIN_DEBUG_NONE;
 
 static PGMSTR(errormagic, "Error:");
 static PGMSTR(echomagic, "echo:");

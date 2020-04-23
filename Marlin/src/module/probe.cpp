@@ -365,9 +365,15 @@ bool Probe::set_deployed(const bool deploy) {
   if (DEBUGGING(LEVELING)) {
     DEBUG_POS("Probe::set_deployed", current_position);
     DEBUG_ECHOLNPAIR("deploy: ", deploy);
+    DEBUG_ECHOLNPAIR("endstops.z_probe_enabled: ", endstops.z_probe_enabled);
   }
 
-  if (endstops.z_probe_enabled == deploy) return false;
+  if (endstops.z_probe_enabled == deploy) {
+    if (DEBUGGING(LEVELING)) {
+      DEBUG_ECHOLNPGM("not changing probe deployment");
+    }
+    return false;
+  }
 
   // Make room for probe to deploy (or stow)
   // Fix-mounted probe should only raise for deploy
