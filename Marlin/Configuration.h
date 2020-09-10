@@ -132,7 +132,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Randy #0001"
+#define CUSTOM_MACHINE_NAME "Randy 2020-06-11 03"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1038,8 +1038,8 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
-//#define EXTRA_PROBING    1
+#define MULTIPLE_PROBING 3
+#define EXTRA_PROBING    2
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -1483,7 +1483,7 @@
 
 #define Z_SAFE_HOMING
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (127 + 40) // X point for homing will put the nozzle directly over the linear rail, so if homing rams the bed, there's the least damage!
+  #define Z_SAFE_HOMING_X_POINT (X_CENTER - 40) // X point for homing will put the nozzle directly over the linear rail, so if homing rams the bed, there's the least damage!
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing when homing all axes (G28).
 #endif
 
